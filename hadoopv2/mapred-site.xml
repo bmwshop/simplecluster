@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+
+<property>
+<name>mapreduce.jobhistory.address</name>
+<value>$MASTER_HOSTNAME::10020</value>
+<description>Enter your JobHistoryServer hostname eg $jobhistoryserver.full.hostname:10020.</description>
+</property>
+<property>
+<name>mapreduce.jobhistory.webapp.address</name>
+<value>$MASTER_HOSTNAME::19888</value>
+<description>Enter your JobHistoryServer hostname. eg $jobhistoryserver.full.hostname:19888</description>
+</property>
+
+
+</configuration>

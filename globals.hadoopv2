@@ -1,0 +1,56 @@
+#!/bin/bash
+
+# all inputs to cluster provisioning are here.  You need to edit this file to your liking.
+
+# the userid that we should use when setting up the cluster
+# USER=mpiuser
+USER=hadoop
+
+# the type of the cluster that we need to spin up 
+# there needs to be a subdir for each of these types with scripts that are specific to this type of cluster
+CLUSTER_TYPE=hadoopv2
+
+# the key that we should use.  Note that this key will be generated added to SoftLayer.  Make sure that it does not exist
+# in SoftLayer beforehand. 
+KEYNAME=sshclusterkey
+
+# which file will contain the list of the master node  -- hostnames and ips ?
+MASTERNODE_FILENAME=master.txt
+
+# which file will contain the list of the master node -- hostname only ?
+MASTERNODE_FILENAME_HOSTS=mpi_master
+
+# which file will contain the list of slaves node[s] with hostnames and ips?
+SLAVENODE_FILENAME=slaves.txt
+
+# which file will contain the list of slaves node[s] with only hostnames ?
+SLAVENODE_FILENAME_HOSTS=mpi_hosts
+
+# this will be the hostname for the master node of the cluster
+MASTER_HOSTNAME=clustermaster
+
+# this will be the hostname for the slave nodes of the cluster
+SLAVES_BASE_HOSTNAME=clusterslave
+
+# the domain name for the cluster
+DOMAIN=dima.com
+
+# how many slaves do i need to provision?
+NUM_SLAVES=3
+
+#change this as needed. This is Hong Kong 02
+#DATACENTER=hkg02
+DATACENTER=lon02
+
+MASTER_CPU=1
+MASTER_MEM=1024
+MASTER_OS=UBUNTU_12_64
+
+SLAVE_CPU=1
+SLAVE_MEM=1024
+SLAVE_OS=UBUNTU_12_64
+
+
+
+# TODO change this accordingly
+# MASTER_IP=10.104.15.22

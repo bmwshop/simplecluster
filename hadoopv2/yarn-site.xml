@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+
+<property>
+<name>yarn.resourcemanager.resourcetracker.address</name>
+<value>$MASTER_HOSTNAME:8025</value>
+<description>Enter your ResourceManager hostname.</description>
+</property>
+<property>
+<name>yarn.resourcemanager.scheduler.address</name>
+<value>$MASTER_HOSTNAME:8030</value>
+<description>Enter your ResourceManager hostname.</description>
+</property>
+<property>
+<name>yarn.resourcemanager.address</name>
+<value>$MASTER_HOSTNAME:8050</value>
+<description>Enter your ResourceManager hostname.</description>
+</property>
+
+<property>
+<name>yarn.resourcemanager.admin.address</name>
+<value>$MASTER_HOSTNAME:8041</value>
+<description>Enter your ResourceManager hostname.</description>
+</property>
+<property>
+<name>yarn.nodemanager.local-dirs</name>
+<value>$YARN_LOCAL_DIR</value>
+<description>Comma separated list of paths. Use the list of directories
+from $YARN_LOCAL_DIR.
+For example, /grid/hadoop/hdfs/yarn,/grid1/hadoop/hdfs/
+yarn.</description>
+</property>
+<property>
+<name>yarn.nodemanager.log-dirs</name>
+<value>$YARN_LOG_DIR</value>
+<description>Use the list of directories from $YARN_LOG_DIR.
+For example, /var/log/hadoop/yarn.</description>
+</property>
+
+
+</configuration>

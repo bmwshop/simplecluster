@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+
+<property>
+<name>dfs.name.dir</name>
+<value>$DFS_NAME_DIR</value>
+<description>Comma separated list of paths. Use the list of directories
+from $DFS_NAME_DIR.
+For example, /grid/hadoop/hdfs/nn,/grid1/hadoop/hdfs/nn.
+</description>
+</property>
+
+<property>
+<name>dfs.data.dir</name>
+<value>$DFS_DATA_DIR</value>
+<description>Comma separated list of paths. Use the list of directories
+from $DFS_DATA_DIR.
+For example, /grid/hadoop/hdfs/dn,/grid1/hadoop/hdfs/dn.
+</description>
+</property>
+
+<property>
+<name>dfs.http.address</name>
+<value>$MASTER_HOSTNAME:50070</value>
+<description>Enter your NameNode hostname for http access.</description>
+</property>
+
+<property>
+<name>dfs.https.address</name>
+<value>$MASTER_HOSTNAME:50470</value>
+<description>Enter your NameNode hostname for https access.</description>
+</property>
+
+
+</configuration>
