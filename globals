@@ -12,7 +12,7 @@ CLUSTER_TYPE=hadoopv1
 
 # the key that we should use.  Note that this key will be generated added to SoftLayer.  Make sure that it does not exist
 # in SoftLayer beforehand. 
-KEYNAME=sshclusterkey2
+KEYNAME=sshclusterkey3
 
 # which file will contain the list of the master node  -- hostnames and ips ?
 MASTERNODE_FILENAME=master.txt
@@ -32,10 +32,10 @@ SLAVENODE_FILENAME_HOSTS=slaves
 MASTER_HOSTNAME=master
 
 # this will be the hostname for the slave nodes of the cluster
-SLAVES_BASE_HOSTNAME=slavies
+SLAVES_BASE_HOSTNAME=slaves
 
 # the domain name for the cluster
-DOMAIN=bgclass.com
+DOMAIN=bdclass.com
 
 # how many slaves do i need to provision?
 NUM_SLAVES=4
@@ -45,13 +45,15 @@ NUM_SLAVES=4
 # DATACENTER=lon02
 DATACENTER=sjc01
 
-MASTER_CPU=2
-MASTER_MEM=2048
+MASTER_CPU=8
+MASTER_MEM=16384
+MASTER_DISK=100
 # please don't change this as apt-get is used to install software 
 MASTER_OS=UBUNTU_14_64
 
-SLAVE_CPU=2
-SLAVE_MEM=2048
+SLAVE_CPU=4
+SLAVE_MEM=8192
+SLAVE_DISK=100
 # please don't change this as apt-get ins used to install softwre
 SLAVE_OS=UBUNTU_14_64
 

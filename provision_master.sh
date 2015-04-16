@@ -27,9 +27,10 @@ cci_mem=$MASTER_MEM
 cci_os=$MASTER_OS
 
 nic=$MASTER_NIC
+disk=$MASTER_DISK
 
 echo `date` .. starting to provision VM ${hname}.${dmn} in $dc
-id=`sl cci create --datacenter=$dc --hostname=$hname --domain=$dmn --cpu=$cci_cpu --n=$nic --memory=$cci_mem --os=$cci_os --key $kname --hourly --really --wait=86400  --format=raw |grep "^id" |awk '{print $2}'`
+id=`sl cci create --datacenter=$dc --hostname=$hname --domain=$dmn --cpu=$cci_cpu --disk=$disk --n=$nic --memory=$cci_mem --os=$cci_os --key $kname --hourly --really --wait=86400  --format=raw |grep "^id" |awk '{print $2}'`
 
 
 echo `date` .. done provisioning VM ${hname}.${dmn} id $id in $dc

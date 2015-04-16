@@ -1,4 +1,4 @@
-softlayer-mpicluster
+softlayer-simplecluster
 ====================
 
 This is a set of scripts to create simple clusters on SoftLayer.

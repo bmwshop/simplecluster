@@ -19,8 +19,10 @@ nic=$SLAVE_NIC
 currentTime=$(date)
 before=$(date +%s)
 
+disk=$SLAVE_DISK
+
 echo `date` .. starting to provision VM ${hname}.${dmn} in $dc
-id=`sl cci create --datacenter=$dc --hostname=$hname --domain=$dmn --n=$nic --cpu=$SLAVE_CPU --memory=$SLAVE_MEM --os=$SLAVE_OS --key=$kname --hourly --really --wait=86400  --format=raw |grep "^id" |awk '{print $2}'`
+id=`sl cci create --datacenter=$dc --hostname=$hname --domain=$dmn --disk=$disk --n=$nic --cpu=$SLAVE_CPU --memory=$SLAVE_MEM --os=$SLAVE_OS --key=$kname --hourly --really --wait=86400  --format=raw |grep "^id" |awk '{print $2}'`
 
 
 echo `date` .. done provisioning VM ${hname}.${dmn} id $id in $dc
