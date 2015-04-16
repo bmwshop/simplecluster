@@ -7,14 +7,28 @@ what is minimally required for making a cluster.
 
 At this point, this is a fully working, albeit somewhat hacked together, set of scripts.
 
-Ensure you have the SoftLayer CLI installed on your machine, then issue the git pull.
+Ensure you have the SoftLayer CLI installed on your machine.  See this page:
+http://sldn.softlayer.com/blog/phil/Getting-Started-Python-CLI
 
+```
+apt-get install python-pip
+pip install softlayer
+```
+Make sure you configure your softlayer CLI with your SoftLayer credentials:
+```
+sl config setup
+```
+Then issue the git clone:
+```
+git clone https://github.com/bmwshop/simplecluster.git
+```
+Change to the simplecluster directory.
 To create a new cluster, edit the globals file, e.g.
 ```
 vi globals
 ```
 Here you will find the desciption of the nodes, name of the key to use and the type of your cluster
-At the moment, I have tested this only with hadoop v1
+At the moment, I have tested this only with hadoopv1, openmpi, crossbow cluster types
 Once you are done simply run:
 ```
 ./make_cluster.sh
@@ -35,7 +49,7 @@ Or, to connect to the master node as root, you do
 ```
 
 
-To remove the cluster, similarly, you run
+To deprovision the cluster, similarly, you run
 
 ```
 ./unmake_cluster.sh
