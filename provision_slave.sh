@@ -22,15 +22,15 @@ before=$(date +%s)
 disk=$SLAVE_DISK
 
 echo `date` .. starting to provision VM ${hname}.${dmn} in $dc
-id=`sl cci create --datacenter=$dc --hostname=$hname --domain=$dmn --disk=$disk --n=$nic --cpu=$SLAVE_CPU --memory=$SLAVE_MEM --os=$SLAVE_OS --key=$kname --hourly --really --wait=86400  --format=raw |grep "^id" |awk '{print $2}'`
+id=`$SLCLI_CMD vs create --datacenter=$dc --hostname=$hname --domain=$dmn --disk=$disk --n=$nic --cpu=$SLAVE_CPU --memory=$SLAVE_MEM --os=$SLAVE_OS --key=$kname --hourly --really --wait=86400  --format=raw |grep "^id" |awk '{print $2}'`
 
 
 echo `date` .. done provisioning VM ${hname}.${dmn} id $id in $dc
 after=$(date +%s)
 delta="$(expr $after - $before)"
 echo `date` ... provisioning done in $delta in $dc
-private_ip=`sl cci detail $id --format=raw |grep "^private_ip" |awk '{print $2}'`
-public_ip=`sl cci detail $id --format=raw |grep "^public_ip" |awk '{print $2}'`
+private_ip=`$SLCLI_CMD vs detail $id --format=raw |grep "^private_ip" |awk '{print $2}'`
+public_ip=`$SLCLI_CMD vs detail $id --format=raw |grep "^public_ip" |awk '{print $2}'`
 
 
 # save the ip

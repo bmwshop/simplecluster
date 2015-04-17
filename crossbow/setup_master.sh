@@ -19,6 +19,9 @@ scp -o StrictHostKeyChecking=no -i ../$KEYNAME  mapred-site.xml $ip:
 scp -o StrictHostKeyChecking=no -i ../$KEYNAME install_hadoop.sh $ip:
 ssh -o StrictHostKeyChecking=no -i ../$KEYNAME $ip "./install_hadoop.sh"
 
+scp -o StrictHostKeyChecking=no -i ../$KEYNAME hg19-prep.sh $USER@$ip:
+scp -o StrictHostKeyChecking=no -i ../$KEYNAME hg19-run.sh $USER@$ip:
+
 scp -o StrictHostKeyChecking=no -i ../$KEYNAME install_crossbow.sh $USER@$ip: 
 ssh -o StrictHostKeyChecking=no -i ../$KEYNAME -l $USER $ip "./install_crossbow.sh"
 

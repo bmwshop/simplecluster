@@ -30,15 +30,15 @@ nic=$MASTER_NIC
 disk=$MASTER_DISK
 
 echo `date` .. starting to provision VM ${hname}.${dmn} in $dc
-id=`sl cci create --datacenter=$dc --hostname=$hname --domain=$dmn --cpu=$cci_cpu --disk=$disk --n=$nic --memory=$cci_mem --os=$cci_os --key $kname --hourly --really --wait=86400  --format=raw |grep "^id" |awk '{print $2}'`
+id=`$SLCLI_CMD vs create --datacenter=$dc --hostname=$hname --domain=$dmn --cpu=$cci_cpu --disk=$disk --n=$nic --memory=$cci_mem --os=$cci_os --key $kname --hourly --really --wait=86400  --format=raw |grep "^id" |awk '{print $2}'`
 
 
 echo `date` .. done provisioning VM ${hname}.${dmn} id $id in $dc
 after=$(date +%s)
 delta="$(expr $after - $before)"
 echo `date` ... provisioning done in $delta in $dc
-private_ip=`sl cci detail $id --format=raw |grep "^private_ip" |awk '{print $2}'`
-public_ip=`sl cci detail $id --format=raw |grep "^public_ip" |awk '{print $2}'`
+private_ip=`$SLCLI_CMD vs detail $id --format=raw |grep "^private_ip" |awk '{print $2}'`
+public_ip=`$SLCLI_CMD vs detail $id --format=raw |grep "^public_ip" |awk '{print $2}'`
 
 # overwrite the globals file
 # cp -p $globals_fn $globals_fn_classic
