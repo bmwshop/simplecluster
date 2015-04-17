@@ -27,8 +27,9 @@ To create a new cluster, edit the globals file, e.g.
 ```
 vi globals
 ```
-Here you will find the desciption of the nodes, name of the key to use and the type of your cluster
+Here you will find the desciption of the nodes, name of the key to use and the type of your cluster.
 At the moment, I have tested this only with hadoopv1, openmpi, crossbow cluster types
+If you are using the new SL CLI, you'll need to set the SLCLI_CMD var to "slcli" intead of "sl"
 Once you are done simply run:
 ```
 ./make_cluster.sh
