@@ -7,10 +7,10 @@
 USER=hadoop
 
 # the currently prod version of the cli command
-SLCLI_CMD=sl
+# SLCLI_CMD=sl
 
 # the new version
-# SLCLI_CMD=slcli
+SLCLI_CMD=slcli
 
 # the type of the cluster that we need to spin up 
 # there needs to be a subdir for each of these types with scripts that are specific to this type of cluster
