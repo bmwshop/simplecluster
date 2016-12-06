@@ -19,7 +19,7 @@ dmn=$DOMAIN
 echo `date` 'deprovision_master starting'
 
 
-for i in `sl cci list --format=raw |grep "${hname}.${dmn}" | cut -d " " -f1`
+for i in `sl vs list |grep "${hname}.${dmn}" | cut -d " " -f1`
 do
   echo `date` "deprovision_master canceling node $i"
   $SLCLI_CMD vs cancel $i --really

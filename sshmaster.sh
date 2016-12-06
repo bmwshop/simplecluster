@@ -2,7 +2,7 @@
 
 source globals
 
-mip=`cat $MASTERNODE_FILENAME | cut -d " " -f1`
+mip=`cat $MASTERNODE_FILENAME | cut -d " " -f2`
 
 # if [ $# -ne 1 ] ; then
 # echo " Usage: sshmaster.sh keyname"
@@ -11,4 +11,4 @@ mip=`cat $MASTERNODE_FILENAME | cut -d " " -f1`
 
 # kname=$1
 
-ssh -o StrictHostKeyChecking=no -i $KEYNAME -l $USER $mip
+ssh -o StrictHostKeyChecking=no -i $KEYNAME -l $USER root@$mip

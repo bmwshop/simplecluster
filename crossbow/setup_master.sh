@@ -7,17 +7,17 @@ source ../globals
 
 echo target user is $USER
 
-ip=`cat ../$MASTERNODE_FILENAME | cut -d " " -f1`
+ip=`cat ../$MASTERNODE_FILENAME | cut -d " " -f2`
 
-ssh -o StrictHostKeyChecking=no -i ../$KEYNAME $ip "apt-get install -y openjdk-7-jdk vnc4server firefox g++ git"
+ssh -o StrictHostKeyChecking=no -i ../$KEYNAME root@$ip "apt-get install -y openjdk-7-jdk vnc4server firefox g++ git"
 
-scp -o StrictHostKeyChecking=no -i ../$KEYNAME  env.sh $ip:
-scp -o StrictHostKeyChecking=no -i ../$KEYNAME  core-site.xml $ip:
-scp -o StrictHostKeyChecking=no -i ../$KEYNAME  hdfs-site.xml $ip:
-scp -o StrictHostKeyChecking=no -i ../$KEYNAME  mapred-site.xml $ip:
+scp -o StrictHostKeyChecking=no -i ../$KEYNAME  env.sh root@$ip:
+scp -o StrictHostKeyChecking=no -i ../$KEYNAME  core-site.xml root@$ip:
+scp -o StrictHostKeyChecking=no -i ../$KEYNAME  hdfs-site.xml root@$ip:
+scp -o StrictHostKeyChecking=no -i ../$KEYNAME  mapred-site.xml root@$ip:
 
-scp -o StrictHostKeyChecking=no -i ../$KEYNAME install_hadoop.sh $ip:
-ssh -o StrictHostKeyChecking=no -i ../$KEYNAME $ip "./install_hadoop.sh"
+scp -o StrictHostKeyChecking=no -i ../$KEYNAME install_hadoop.sh root@$ip:
+ssh -o StrictHostKeyChecking=no -i ../$KEYNAME root@$ip "./install_hadoop.sh"
 
 scp -o StrictHostKeyChecking=no -i ../$KEYNAME hg19-prep.sh $USER@$ip:
 scp -o StrictHostKeyChecking=no -i ../$KEYNAME hg19-run.sh $USER@$ip:
@@ -33,7 +33,7 @@ ssh -o StrictHostKeyChecking=no -i ../$KEYNAME -l $USER $ip "echo 'export CROSSB
 ssh -o StrictHostKeyChecking=no -i ../$KEYNAME -l $USER $ip "echo 'export PATH=$PATH:/usr/local/hadoop/bin:/home/hadoop/bowtie-1.1.1' >> .profile"
 
 
-scp -o StrictHostKeyChecking=no -i ../$KEYNAME start_master.sh $ip:
+scp -o StrictHostKeyChecking=no -i ../$KEYNAME start_master.sh root@$ip:
 
 # ssh -o StrictHostKeyChecking=no -i ../$KEYNAME $ip "./start_master.sh"
 

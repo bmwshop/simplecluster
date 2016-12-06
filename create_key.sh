@@ -13,7 +13,7 @@ source globals
 
 kname=$KEYNAME
 
-aa=`$SLCLI_CMD sshkey list --format=raw |grep $kname`
+aa=`$SLCLI_CMD sshkey list |grep $kname`
 
 if [ ! -z "$aa" ]; then 
   echo "key $kname is already present in SL. Please select a non-existing key."
