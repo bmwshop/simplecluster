@@ -6,7 +6,7 @@ source globals
 
 # sets up sw on all nodes
 
-for i in `cat $MASTERNODE_FILENAME | cut -d " " -f1` `cat $SLAVENODE_FILENAME | cut -d " " -f1`
+for i in `cat $MASTERNODE_FILENAME | cut -d " " -f2` `cat $SLAVENODE_FILENAME | cut -d " " -f2`
 do
 # if [ ! -z $i ]; then
 echo `date` setup_nodes.. starting to setup node $i
@@ -21,7 +21,7 @@ wait
 echo `date` setup_nodes Now setting up the slave nodes.. 
 cd ${CLUSTER_TYPE}
 # note that we're working in  a dir one level down still 
-for i in `cat ../${SLAVENODE_FILENAME} | cut -d " " -f1`
+for i in `cat ../${SLAVENODE_FILENAME} | cut -d " " -f2`
 do
  ./setup_slave.sh $i &
 done
@@ -38,9 +38,9 @@ wait
 cd ..
 
 echo `date` setup_nodes Now starting up cluster.. 
-mip=`cat $MASTERNODE_FILENAME | cut -d " " -f1`
+mip=`cat $MASTERNODE_FILENAME | cut -d " " -f2`
 
-ssh -o StrictHostKeyChecking=no -i $KEYNAME $mip "./start_master.sh"
+ssh -o StrictHostKeyChecking=no -i $KEYNAME root@$mip "./start_master.sh"
 
 echo `date` setup_nodes... all done
 

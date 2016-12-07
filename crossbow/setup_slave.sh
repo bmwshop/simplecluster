@@ -12,17 +12,17 @@ fi
 
 ip=$1
 
-ssh -o StrictHostKeyChecking=no -i ../$KEYNAME $ip "apt-get install -y openjdk-7-jdk g++ git"
+ssh -o StrictHostKeyChecking=no -i ../$KEYNAME root@$ip "apt-get install -y openjdk-7-jdk g++ git"
 
-scp -o StrictHostKeyChecking=no -i ../$KEYNAME env.sh $ip:
+scp -o StrictHostKeyChecking=no -i ../$KEYNAME env.sh root@$ip:
 
-scp -o StrictHostKeyChecking=no -i ../$KEYNAME  core-site.xml $ip:
-scp -o StrictHostKeyChecking=no -i ../$KEYNAME  hdfs-site.xml $ip:
-scp -o StrictHostKeyChecking=no -i ../$KEYNAME  mapred-site.xml $ip:
+scp -o StrictHostKeyChecking=no -i ../$KEYNAME  core-site.xml root@$ip:
+scp -o StrictHostKeyChecking=no -i ../$KEYNAME  hdfs-site.xml root@$ip:
+scp -o StrictHostKeyChecking=no -i ../$KEYNAME  mapred-site.xml root@$ip:
 
-scp -o StrictHostKeyChecking=no -i ../$KEYNAME install_hadoop.sh $ip:
+scp -o StrictHostKeyChecking=no -i ../$KEYNAME install_hadoop.sh root@$ip:
 
-ssh -o StrictHostKeyChecking=no -i ../$KEYNAME $ip "./install_hadoop.sh"
+ssh -o StrictHostKeyChecking=no -i ../$KEYNAME root@$ip "./install_hadoop.sh"
 
 scp -o StrictHostKeyChecking=no -i ../$KEYNAME install_crossbow.sh $USER@$ip: 
 ssh -o StrictHostKeyChecking=no -i ../$KEYNAME -l $USER $ip "./install_crossbow.sh"
@@ -34,5 +34,5 @@ ssh -o StrictHostKeyChecking=no -i ../$KEYNAME -l $USER $ip "echo 'export CROSSB
 ssh -o StrictHostKeyChecking=no -i ../$KEYNAME -l $USER $ip "echo 'export CROSSBOW_SRATOOLKIT_HOME=/home/hadoop/sratoolkit.2.4.5-2-ubuntu64/bin' >> .profile"
 ssh -o StrictHostKeyChecking=no -i ../$KEYNAME -l $USER $ip "echo 'export PATH=$PATH:/usr/local/hadoop/bin:/home/hadoop/bowtie-1.1.1/bin' >> .profile"
 
-scp -o StrictHostKeyChecking=no -i ../$KEYNAME start_slave.sh $ip:
+scp -o StrictHostKeyChecking=no -i ../$KEYNAME start_slave.sh root@$ip:
 
