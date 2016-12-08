@@ -44,21 +44,21 @@ SLAVES_BASE_HOSTNAME=slaves
 DOMAIN=bdclass.com
 
 # how many slaves do i need to provision?
-NUM_SLAVES=4
+NUM_SLAVES=2
 
 #change this as needed. This is Hong Kong 02
 #DATACENTER=hkg02
 # DATACENTER=lon02
 DATACENTER=sjc01
 
-MASTER_CPU=8
-MASTER_MEM=16384
+MASTER_CPU=2
+MASTER_MEM=4096
 MASTER_DISK=100
 # please don't change this as apt-get is used to install software 
 MASTER_OS=UBUNTU_14_64
 
-SLAVE_CPU=4
-SLAVE_MEM=8192
+SLAVE_CPU=2
+SLAVE_MEM=4096
 SLAVE_DISK=100
 # please don't change this as apt-get ins used to install softwre
 SLAVE_OS=UBUNTU_14_64
