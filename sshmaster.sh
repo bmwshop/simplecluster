@@ -11,4 +11,5 @@ mip=`cat $MASTERNODE_FILENAME | cut -d " " -f2`
 
 # kname=$1
 
-ssh -o StrictHostKeyChecking=no -i $KEYNAME -l $USER root@$mip
+# ssh -o StrictHostKeyChecking=no -i $KEYNAME -l $USER root@$mip
+ssh -o StrictHostKeyChecking=no -i $KEYNAME -l $USER $mip

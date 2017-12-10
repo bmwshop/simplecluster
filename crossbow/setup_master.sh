@@ -9,7 +9,7 @@ echo target user is $USER
 
 ip=`cat ../$MASTERNODE_FILENAME | cut -d " " -f2`
 
-ssh -o StrictHostKeyChecking=no -i ../$KEYNAME root@$ip "apt-get install -y openjdk-7-jdk vnc4server firefox g++ git"
+ssh -o StrictHostKeyChecking=no -i ../$KEYNAME root@$ip "apt-get install -y python openjdk-8-jdk vnc4server firefox g++ git"
 
 scp -o StrictHostKeyChecking=no -i ../$KEYNAME  env.sh root@$ip:
 scp -o StrictHostKeyChecking=no -i ../$KEYNAME  core-site.xml root@$ip:

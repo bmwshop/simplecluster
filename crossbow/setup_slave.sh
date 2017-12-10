@@ -12,7 +12,7 @@ fi
 
 ip=$1
 
-ssh -o StrictHostKeyChecking=no -i ../$KEYNAME root@$ip "apt-get install -y openjdk-7-jdk g++ git"
+ssh -o StrictHostKeyChecking=no -i ../$KEYNAME root@$ip "apt-get install -y python openjdk-8-jdk g++ git"
 
 scp -o StrictHostKeyChecking=no -i ../$KEYNAME env.sh root@$ip:
 

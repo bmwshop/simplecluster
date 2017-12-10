@@ -15,10 +15,11 @@ SLCLI_CMD=slcli
 # the type of the cluster that we need to spin up 
 # there needs to be a subdir for each of these types with scripts that are specific to this type of cluster
 CLUSTER_TYPE=crossbow
+# CLUSTER_TYPE=hadoopv1
 
 # the key that we should use.  Note that this key will be generated added to SoftLayer.  Make sure that it does not exist
 # in SoftLayer beforehand. 
-KEYNAME=tempkey2
+KEYNAME=tempkey3
 
 # which file will contain the list of the master node  -- hostnames and ips ?
 MASTERNODE_FILENAME=master.txt
@@ -55,13 +56,15 @@ MASTER_CPU=2
 MASTER_MEM=4096
 MASTER_DISK=100
 # please don't change this as apt-get is used to install software 
-MASTER_OS=UBUNTU_14_64
+# MASTER_OS=UBUNTU_14_64
+MASTER_OS=UBUNTU_16_64
 
 SLAVE_CPU=2
 SLAVE_MEM=4096
 SLAVE_DISK=100
 # please don't change this as apt-get ins used to install softwre
-SLAVE_OS=UBUNTU_14_64
+# SLAVE_OS=UBUNTU_14_64
+SLAVE_OS=UBUNTU_16_64
 
 
 

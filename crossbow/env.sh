@@ -15,8 +15,8 @@ HADOOP_GROUP=hadoop
 DFS_NAME_DIR=/usr/local/hadoop/hdfs/nn
 DFS_DATA_DIR=/data
 
-JDK=openjdk-7-jdk
-JDK_ROOT=/usr/lib/jvm/java-7-openjdk-amd64/jre
+JDK=openjdk-8-jdk
+JDK_ROOT=/usr/lib/jvm/java-8-openjdk-amd64/jre
 
 # secondary namenode only
 #FS_CHECKPOINT_DIR=/usr/local/hadoop/hdfs/snn
