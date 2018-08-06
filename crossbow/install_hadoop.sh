@@ -7,7 +7,9 @@ source ./env.sh
 
 hver=1.2.1
 
-wget http://apache.claz.org/hadoop/core/hadoop-${hver}/hadoop-${hver}.tar.gz
+# wget http://apache.claz.org/hadoop/core/hadoop-${hver}/hadoop-${hver}.tar.gz
+wget https://archive.apache.org/dist/hadoop/core/hadoop-${hver}/hadoop-${hver}.tar.gz
+
 tar xzf hadoop-${hver}.tar.gz
 mv hadoop-${hver} $HADOOP_ROOT
 rm hadoop-${hver}.tar.gz
